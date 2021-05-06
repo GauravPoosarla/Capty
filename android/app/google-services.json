@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "238787309344",
+    "project_id": "project-capty",
+    "storage_bucket": "project-capty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238787309344:android:48e29df95e325a3edd3145",
+        "android_client_info": {
+          "package_name": "com.example.capty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238787309344-lt171gclf795etmv7kt9igfl1d6f70j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPvn5ynIDXJLRyMvdLE2Q6ymz1oP9Itfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238787309344-lt171gclf795etmv7kt9igfl1d6f70j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
