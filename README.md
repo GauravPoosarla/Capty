@@ -81,7 +81,7 @@ https://www.figma.com/file/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=0%
 
 ## 👧 Contributors 👦
 
-<a href="https://github.com/GauravPoosarla"> Gaurav Poosarla <br>
-<a href="https://github.com/AkanshChoudhary"> Akansh Choudhary <br>
-<a href="https://github.com/Margi16"> Margi Bhatt <br>
-<a href="https://github.com/sahilsync07"> Sahil Kumar <br>
+<a href="https://github.com/GauravPoosarla" target="_blank"> Gaurav Poosarla <br>
+<a href="https://github.com/AkanshChoudhary" target="_blank"> Akansh Choudhary <br>
+<a href="https://github.com/Margi16" target="_blank"> Margi Bhatt <br>
+<a href="https://github.com/sahilsync07" target="_blank"> Sahil Kumar <br>
