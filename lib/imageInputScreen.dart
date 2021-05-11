@@ -8,40 +8,60 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as store;
+import 'package:cloud_firestore/cloud_firestore.dart' as fbStore;
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:random_string/random_string.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-class GameScreen extends StatefulWidget {
+class ImageInputScreen extends StatefulWidget {
     @override
-    _GameScreenState createState() => _GameScreenState();
+    _ImageInputScreenState createState() => _ImageInputScreenState();
 }
 
-class _GameScreenState extends State<GameScreen> {
+class _ImageInputScreenState extends State<ImageInputScreen> {
     Future<void> getImage() async {
         final ImagePicker _picker = ImagePicker();
         PickedFile image = await _picker.getImage(source: ImageSource.gallery);
         File imageFile = File(image.path);
         String imgId = randomAlphaNumeric(7);
-        await store.FirebaseStorage.instance.ref().child('${auth.FirebaseAuth.instance.currentUser.uid}/$imgId.jpg/')
-            .putFile(imageFile);
-        //TODO: call API here and pass uid , imgId
-        print(auth.FirebaseAuth.instance.currentUser.uid);
-        Navigator.push(context, MaterialPageRoute(builder: ((context){
-            return SplashScreen(imageFile);
-        })));
+        fbStore.FirebaseFirestore.instance.collection('path').doc('urlPath').get().then((value) async {
+          Uri url = Uri.parse(value.data()['url'].toString());
+          await store.FirebaseStorage.instance.ref().child('${auth.FirebaseAuth.instance.currentUser.uid}/$imgId.jpg/')
+              .putFile(imageFile).whenComplete(() async {
+            http.post(url,body: {
+              "uid": auth.FirebaseAuth.instance.currentUser.uid,
+              "imgId": imgId+'.jpg'
+            }).then((res) {
+              final body = json.decode(res.body);
+              print(body);
+              Navigator.push(context, MaterialPageRoute(builder: ((context){
+                return ResultScreen(imageFile,body);
+              })));
+            });
+          });
+        });
     }
 
     Future<void> getCameraImage() async {
-        final ImagePicker _picker = ImagePicker();
-        //final image = await _picker.getImage(source: ImageSource.gallery);
-        final cameraImage = await _picker.getImage(source: ImageSource.camera);
-        File imageFile = File(cameraImage.path);
-        await store.FirebaseStorage.instance.ref().child('${auth.FirebaseAuth.instance.currentUser.uid}/image.jpg/')
-            .putFile(imageFile);
-        print(auth.FirebaseAuth.instance.currentUser.uid);
-        Navigator.push(context, MaterialPageRoute(builder: ((context){
-            return SplashScreen(imageFile);
-        })));
+      final ImagePicker _picker = ImagePicker();
+      PickedFile image = await _picker.getImage(source: ImageSource.camera);
+      File imageFile = File(image.path);
+      String imgId = randomAlphaNumeric(7);
+      fbStore.FirebaseFirestore.instance.collection('path').doc('urlPath').get().then((value) async {
+        Uri url = Uri.parse(value.data()['url'].toString());
+        await store.FirebaseStorage.instance.ref().child('${auth.FirebaseAuth.instance.currentUser.uid}/$imgId.jpg/')
+            .putFile(imageFile).whenComplete(() async {
+          http.post(url,body: {
+            "uid": auth.FirebaseAuth.instance.currentUser.uid,
+            "imgId": imgId+'.jpg'
+          }).then((res) {
+            final body = json.decode(res.body);
+            print(body);
+            Navigator.push(context, MaterialPageRoute(builder: ((context){
+              return ResultScreen(imageFile,body);
+            })));
+          });
+        });
+      });
     }
 
     @override
@@ -60,14 +80,14 @@ class _GameScreenState extends State<GameScreen> {
                           Container(
                               padding: EdgeInsets.all(10.0),
                               child: Text(
-                                  'Capty uses AI and\nlets you know more\nabout the image!',
+                                  'Capty uses AI and lets you know more about the image!',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Color(0xff29BCBC),
                                       fontSize: 32.0,
                                       fontWeight: FontWeight.bold,
                                   ),
-                                  maxLines: 3,
+                                  maxLines: 4,
                               ),
                           ),
                           SizedBox(height: 32,),

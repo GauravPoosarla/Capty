@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_svg/flutter_svg.dart';
 
-class GoalScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _GoalScreenState createState() => _GoalScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _GoalScreenState extends State<GoalScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   //@override
   // void initState() {
   //   auth.FirebaseAuth.instance.signInAnonymously().then((value) {});
@@ -39,7 +39,7 @@ class _GoalScreenState extends State<GoalScreen> {
                             shape:MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)))),
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => GameScreen()));
+                              MaterialPageRoute(builder: (context) => ImageInputScreen()));
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 15),

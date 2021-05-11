@@ -15,6 +15,6 @@ void main() async {
           ),
       debugShowCheckedModeBanner: false,
       home: (auth.FirebaseAuth.instance.currentUser != null)
-          ? GoalScreen()
+          ? HomeScreen()
           : LoginScreen()));
 }

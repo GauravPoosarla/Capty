@@ -10,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String inputName;
+  String inputName='';
   bool loading= false;
   @override
   Widget build(BuildContext context) {
@@ -18,92 +18,103 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         backgroundColor: Color(0xffD9F1ED),
         body: Stack(
+          alignment: Alignment.center,
+          fit: StackFit.expand,
           children: [
             Positioned(child: SvgPicture.asset('assets/corner.svg',width: 350,height: 350,),left: 0,top: 0,),
             Positioned(child: SvgPicture.asset('assets/cornerBottom.svg',width: 350,height: 350,),bottom: 0,right: 0,),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Welcome to',
-                    style: TextStyle(
-                        color: Colors.black, fontSize: 30.0)),
-                Text('Capty',
-                    style: TextStyle(
-                        color: Color(0xff29BCBC),
-                        fontSize: 70.0,
-                        fontWeight: FontWeight.w900,
-                        )),
-                SizedBox(
-                  height: 30,
-                ),
-                Text('Enter your name to get started!',
-                    style: TextStyle(
-                        color: Color(0xff29BCBC),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        )),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      focusColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0),borderSide: BorderSide.none),
-                      hintText: 'Ex. John poppins',
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                        borderSide: BorderSide.none,
+            Center(
+              child: Container(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('Welcome to',
+                          style: TextStyle(
+                              color: Colors.black, fontSize: 30.0)),
+                      Text('Capty',
+                          style: TextStyle(
+                              color: Color(0xff29BCBC),
+                              fontSize: 70.0,
+                              fontWeight: FontWeight.w900,
+                              )),
+                      SizedBox(
+                        height: 30,
                       ),
-                    ),
-                    onChanged: (String s) {
-                      setState(() {
-                        inputName = s;
-                      });
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                RaisedButton(
-                  color: Color(0xff24BFBF),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(30.0)),
-                  onPressed: () {
-                    setState(() {
-                      loading = true;
-                    });
-                    auth.FirebaseAuth.instance.signInAnonymously().then((value) {
-                      firestore.FirebaseFirestore.instance
-                          .collection("user+" + value.user.uid)
-                          .doc('UserData')
-                          .set({"Name": inputName}).then((value) {
+                      Text('Enter your name to get started!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color(0xff29BCBC),
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              )),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            focusColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0),borderSide: BorderSide.none),
+                            hintText: 'Ex. John poppins',
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                              borderSide: BorderSide.none,
+                            ),
+                          ),
+                          onChanged: (String s) {
                             setState(() {
-                              loading = false;
+                              inputName = s;
                             });
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => GoalScreen()));
-                      });
-                    });
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
-                    child: (!loading)?Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                          },
+                        ),
                       ),
-                    ):CircularProgressIndicator(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      RaisedButton(
+                        color: Color(0xff24BFBF),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(30.0)),
+                        onPressed: () {
+                          setState(() {
+                            loading = true;
+                          });
+                          auth.FirebaseAuth.instance.signInAnonymously().then((value) {
+                            firestore.FirebaseFirestore.instance
+                                .collection("user+" + value.user.uid)
+                                .doc('UserData')
+                                .set({"Name": inputName}).then((value) {
+                                  setState(() {
+                                    loading = false;
+                                  });
+                              Navigator.pushReplacement(context,
+                                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                            });
+                          });
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                          child: (!loading)?Text(
+                            'Login',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ):CircularProgressIndicator(),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),
