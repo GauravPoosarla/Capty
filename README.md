@@ -59,12 +59,14 @@ https://www.figma.com/file/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=0%
 
 ### Installation
 
-Just click on 'Download the app!', and let the application be downloaded itself. Once it's downloaded, click on Open. Then, click on Install. Click on
-Install Anyway and then click on Open.
+👉 Just click on 'Download the app!', and let the application be downloaded itself!
+👉 Once it's downloaded, click on 'Open'. 
+👉 Then, click on 'Install'. 
+👉 Click on 'Install Anyway' and then click on Open.
 
 ## Usage
 
-Click a photo of anything, and let the application generate caption for you!
+👉 Click a photo of anything, and let the application generate caption for you!
 
 ## Future aspects
 
