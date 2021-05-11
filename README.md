@@ -1,7 +1,7 @@
 <br />
 <p align="center">
-  <a href="https://github.com/GauravPoosarla/image_to_text/blob/margi_branch/android/app/src/main/res/drawable/icon.jpeg">
-    <img src="https://github.com/GauravPoosarla/image_to_text/blob/margi_branch/android/app/src/main/res/drawable/icon.jpeg" alt="Logo" width="80" height="80">
+  <a href="android/app/src/main/res/drawable/icon.jpeg">
+    <img src="android/app/src/main/res/drawable/icon.jpeg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Capty</h3>
