@@ -9,7 +9,7 @@
   <p align="center">
     Identify new things smartly!
     <br />
-    <a href=""><strong>Download the app! »</strong></a>
+    <a href="https://github.com/GauravPoosarla/image_to_text/blob/main/android/app-release.apk"><strong>Download the app! »</strong></a>
     <br />
     <br />
   </p>
@@ -55,7 +55,7 @@ Prototype link:
 https://www.figma.com/proto/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=62%3A23&scaling=scale-down&page-id=0%3A1
 
 ## .apk file:
-
+https://github.com/GauravPoosarla/image_to_text/blob/main/android/app-release.apk
 
 ## Getting Started
 
