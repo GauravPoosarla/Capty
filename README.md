@@ -19,8 +19,8 @@
 <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.31%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.41%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.52%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.26.03%20PM.png" width="200">
 
 Aim of our project is to create a ML based Software Application that intelligently identifies
-the patterns in the given Image and converts it into a one line description in the form of TEXT.
-It Predicts the results on the basis of the patterns it haslearnt during its Training phase.
+the patterns in the given Image and converts it into a one line description in the form of text.
+It predicts the results on the basis of the patterns it has learnt during its Training phase.
 
 ### Target audience
 - Visually Impaired people
