@@ -16,8 +16,7 @@
 </p>
 
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.31%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.41%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.25.52%20PM.png" width="200">  <img src="https://github.com/GauravPoosarla/image_to_text/blob/main/Screenshot%202021-05-20%20at%202.26.03%20PM.png" width="200">
 
 Aim of our project is to create a ML based Software Application that intelligently identifies
 the patterns in the given Image and converts it into a one line description in the form of TEXT.
@@ -51,6 +50,9 @@ This section should list any major frameworks that you built your project using.
 ### Prototype
 Figma link:
 https://www.figma.com/file/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=0%3A1
+
+Prototype link:
+https://www.figma.com/proto/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=62%3A23&scaling=scale-down&page-id=0%3A1
 
 ## .apk file:
 
