@@ -9,7 +9,6 @@
   <p align="center">
     Identify new things smartly!
     <br />
-    <a href="https://github.com/GauravPoosarla/image_to_text/blob/main/android/app-release.apk"><strong>Download the app! »</strong></a>
     <br />
     <br />
   </p>
@@ -47,26 +46,11 @@ Never was an app made to help people recognize the scene in front of them. This 
 ## UI
 
 ### Prototype
-Figma link:
-https://www.figma.com/file/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=0%3A1
+Figma link: http://bit.ly/FigmaDesignCapty
 
-Prototype link:
-https://www.figma.com/proto/KWxzKBOHzofLo5uhnnAorK/Figma-Mobile-Design?node-id=62%3A23&scaling=scale-down&page-id=0%3A1
+Prototype link: http://bit.ly/PrototypeCapty
 
-## .apk file:
-https://github.com/GauravPoosarla/image_to_text/blob/main/android/app-release.apk
-
-## Getting Started
-
-### Installation
-
-👉 Just click on 'Download the app!', and let the application be downloaded itself!
-
-👉 Once it's downloaded, click on 'Open'. 
-
-👉 Then, click on 'Install'. 
-
-👉 Click on 'Install Anyway' and then click on Open.
+Project Report document: http://bit.ly/CaptyProjectReport
 
 ## Usage
 
